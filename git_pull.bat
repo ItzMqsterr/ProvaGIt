@@ -1,3 +1,5 @@
 @echo off
-git pull origin master
+git fetch origin 
+git pull origin master --strategy-option=theirs
+echo pull completato!
 pause
