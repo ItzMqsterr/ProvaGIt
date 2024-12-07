@@ -1,5 +1,6 @@
 @echo off
 echo Ripristino completo della cartella locale con la versione remota...
+git fetch
 git stash clear
 git reset --hard
 git pull origin master
