@@ -1,6 +1,5 @@
 @echo off
-
-git pull origin master --strategy-option=theirs
-
+git fetch origin master
+git merge origin master --strategy-option=theirs
 echo Completato
 pause
