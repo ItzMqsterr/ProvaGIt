@@ -1,12 +1,13 @@
 @echo off
 git fetch origin
-git status | find "ahead" >nul
+git status | find " Your branch is behind" >nul
 
 IF %ERRORLEVEL% EQU 0 (
-    git push origin master
-    echo Push completato con successo!
+    echo Eseguire prima un pull.
+
 ) ELSE (
-    echo Nessuna modifica da pushare.
+    git push origin master
+    echo push eseguito con successo 
 )
 
 pause
