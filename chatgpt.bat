@@ -1,15 +1,18 @@
 @echo off
 git fetch origin
-
-:: Controlla se la tua repo locale è indietro rispetto al remoto
 git status | find "Your branch is behind" > nul
 
 IF %ERRORLEVEL% EQU 0 (
-    echo La tua repository remota è aggiornata rispetto a quella locale.
-    echo Esegui un pull prima di fare il push.
-) ELSE (
-    git push origin master
+    echo Il branch locale è indietro rispetto al remoto. Eseguire prima un pull.
+    pause
+    exit /b
+)
+
+git push origin master
+IF %ERRORLEVEL% EQU 0 (
     echo Push eseguito con successo.
+) ELSE (
+    echo Errore durante il push. Assicurati che il branch locale sia aggiornato.
 )
 
 pause
