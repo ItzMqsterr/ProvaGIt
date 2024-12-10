@@ -1,5 +1,5 @@
 @echo off
-git fetch origin
+git fetch origin > nul
 git status | find "Your branch is behind" > nul
 
 IF %ERRORLEVEL% EQU 0 (
