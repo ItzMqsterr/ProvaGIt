@@ -1,0 +1,4 @@
+git fetch origin master
+git pull origin master --strategy=recursive -X theirs
+echo "Pull completato"
+ 

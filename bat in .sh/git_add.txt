@@ -1,0 +1,5 @@
+#!/bin/bash
+
+git add .
+echo "Script eseguito con successo"
+

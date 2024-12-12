@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo script avviato
+echo "script avviato"
 read -p "Inserisci il messaggio del commit: " commit_message
 git add .
 git commit -m "$commit_message"

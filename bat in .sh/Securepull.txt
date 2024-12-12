@@ -1,0 +1,14 @@
+#!/bin/bash
+
+git fetch origin /dev/null 2>&1
+git status | grep -q "Your branch is behind" /dev/null
+
+IF %ERRORLEVEL% EQO 0 (
+    echo "Eseguire un pull."
+
+) ELSE (
+    git push origin master
+    echo "push eseguito con sucesso."
+
+)
+
