@@ -1,13 +1,8 @@
 @echo off
-git fetch origin > nul
-git status | find "Your branch is behind" > nul
-
-IF %ERRORLEVEL% EQU 0 (
-    echo Eseguire prima un pull.
-
-) ELSE (
-    git push origin master
-    echo push eseguito con successo 
-)
-
+git add .
+git commit -m "Pull-1"
+git fetch origin master
+git pull -X theirs origin master
+git add .
+git commit -m "Secure-pull-2"
 pause
